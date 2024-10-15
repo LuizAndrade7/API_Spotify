@@ -77,18 +77,23 @@ optionsDiv.appendChild(button);
 });
 }
 
-let a = 0 , b = 0;
+let a = 0 , b = 0, tentativas=5;
 // Verifica se a resposta está correta
 function checkAnswer(selected) {
 const resultDiv = document.getElementById('result');
-if (selected.name === correctTrack.name) {
-    a++;
-    resultDiv.innerHTML = `<p>Correto! Acertos ${a} Erros ${b}</p>`;
-} else {
-    b++;
-    resultDiv.innerHTML = `<p>Incorreto! A música correta era: ${correctTrack.name}. Acertos ${a} Erros ${b}</p>`;
+if(tentativas>0){
+    tentativas= tentativas-1
+    if (selected.name === correctTrack.name) {
+        a++;
+        resultDiv.innerHTML = `<p>Correto! Acertos: ${a}  Erros: ${b}  Tentativas restantes: ${tentativas} </p>`;
+    } else {
+        b++;
+        resultDiv.innerHTML = `<p>Incorreto! A música correta era: ${correctTrack.name}.<br> Acertos: ${a}     Erros: ${b}     Tentativas restantes: ${tentativas}</p>`;
+    }  
+}else{
+    alert ('Suas tentativas acabaram! Você será redirecionado ao site do Spotify!')
+    window.location.href ="https://open.spotify.com/intl-pt"
 }
-
 document.getElementById('nextButton').style.display = 'block'; // Exibe o botão "Próximo"
 
 }
