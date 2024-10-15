@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação de Músicas do Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Adivinhe o Nome da Música ou Artista!</h1>
+    <div id="logoSpot"> <img src="https://static.vecteezy.com/system/resources/previews/031/737/196/non_2x/spotify-icon-spotify-social-media-logo-free-png.png" alt=""></div> <!--Logo do spotify-->
+    <img id="albumImage" class="mb-3" style="display:none;" alt="Album Cover" /> <!--Imagem do album-->
+    <audio id="audioPlayer" controls style="display:flex"></audio> <!--Audioplayer que aparece na página-->
+    <div id="options"></div> <!--Div que aparece as opções-->
+    <div id="result"></div> <!--Div que aparece o resultado correto ou incorreto-->
+    <button id="nextButton" style="display:none;">Próximo</button> <!--Div que aparece o button a partir da resposta-->
+    
+    <script src="script.js"></script>
+</body>
+</html>
